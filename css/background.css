@@ -11,6 +11,21 @@
     z-index: -4;
 }
 
+.heroTitle{
+    position: absolute;
+    color: var(--herotitle-back);
+    font: 900 50vh var(--ff);
+    z-index: 1;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    left: -2vw;
+    bottom: -13vh;
+    opacity: 1;
+}
+
 .circles {
     position: absolute;
     top: 0;
@@ -18,6 +33,7 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
+    z-index: 0;
 }
 
 .circles li {
