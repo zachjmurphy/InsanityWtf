@@ -8,6 +8,12 @@
     box-shadow: none;
 }
 
+.glTitle {
+    font: bold 32px var(--ff);
+    margin-top: 4%;
+    margin-bottom: 2%;
+}
+
 .glWrapper {
     position: relative;
     height: fit-content;
