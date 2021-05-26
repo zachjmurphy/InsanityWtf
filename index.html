@@ -16,6 +16,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/logo.png">
     <link rel="manifest" href="site.webmanifest">
     <script src="https://kit.fontawesome.com/a1fc6f0f3a.js" crossorigin="anonymous"></script>
+    <script src="scripts.js"></script>
 </head>
 
 <body>
@@ -33,35 +34,19 @@
             <li></li>
             <li></li>
         </ul>
+        <div class="heroTitle" id="heroTitle">home</div>
+
     </div>
-
     <div class="home">
-
-        <div class="nav headerBar">
-            <div class="hbWrapper">
-                <div class="socialBar sbLeft">
-                    <a href="https://www.deviantart.com/zachjmurphy"><i class="fa fa-deviantart" id="sb4"></i></a>
-                    <a href="https://www.github.com/zachjmurphy"><i class="fa fa-github" id="sb2"></i></a>
-                </div>
-
-                <img id="logo" src="assets/logo.png" style="width: auto; height: 50px;" )>
-
-                <div class="socialBar sbRight">
-                    <a href="https://www.twitch.tv/zachjmurphy"><i class="fa fa-twitch" id="sb8"></i></a>
-                    <a href="https://www.twitter.com/zachjmurphy"><i class="fa fa-twitter" id="sb3"></i></a>
-                </div>
-            </div>
-        </div>
 
         <div class="homePages">
 
             <div class="homePageDiv greetingLinks" id="greetingLinks">
-                <div class="glWrapper">
+                <button class="glWrapper" id="glWrapper">
                     <p class="glWelcome">Welcome!</p>
                     <p class="glTitle">Zach J Murphy</p>
-                    <p class="glDescription">This is the place to view all of my past, present, and future projects!<br>Click the buttons below to check out some of my work, or click the buttons above to visit my socials!<br>Thanks for stopping by!</nr>
-                    </p>
-                </div>
+                    <p class="glDescription">This is the place to view all of my past, present, and future projects!<br>Click the buttons below to check out some of my work, or click the buttons above to visit my socials!<br>Thanks for stopping by!</nr>/p>
+                 </button>
             </div>
 
             <div class="homePageDiv aboutBox" id="aboutBox">
@@ -83,7 +68,7 @@
                         <div class="abtPosts apMoreInfo">
                             <div class="expandIcon"></div>
                             <div class="apamTitle">Education</div>
-                            <div class="apamBody">I am currently in my senior year of high school but i'm enrolled in college. I am learning all about mental health and troubled kids. In 2016-2078, I went to a troubled kids school
+                            <div class="apamBody">I am currently in my senior year of high school but i'm enrolled in college. I am learning all about mental health and troubled kids. In 2016-2017, I went to a troubled kids school
                                 because I needed professional help with coping with past traumatic issues I had when I was in the foster care system. There was a Child & Youth Worker there who inspired me to want to help kids who there parents have lost faith on and that still have hope of saving before they end up in prison.
                                 Before the pandemic, I frequently did photography, where I often captured nature & beauty.
                             </div>
@@ -99,8 +84,7 @@
             </div>
 
             <div class="homePageDiv psWrapper" id="psWrapper">
-                <div class="psContent">
-                    <div class="projectBox pb11">
+                      <div class="projectBox pb11">
                         <p class="pbHeader">Project Title</p>
                         <div class="pbDescWrapper">
                             <p class="pbDate">Date: 00/00/00</p>
@@ -231,70 +215,74 @@
                             <a class="pbAct pbA1" href="/">Link 2</a>
                         </div>
                     </div>
-                </div>
+
             </div>
 
+            <div class="nav navBar">
+                <div class="logoWrapper">
+                    <img id="logo" src="imgs/logo.png" )>
+                </div>
+                <div class="nbpcUserName">Futur3Sn0w</div>
+                <div class="nbSep" style="margin-bottom: auto; margin-top: 10px;"></div>
+                <div class="navBtnWrapper">
+                    <button class="navButton nbAbout button" id="nbAbout" onclick="aboutBtn()"><label>About
+                        Me</label></button>
+                    <button class="navButton nbHome button" id="nbHome" onclick="homeBtn()"><label>Home</label></button>
+                    <button class="navButton nbProjects button" id="nbProjects" onclick="projectsBtn()"><label>My
+                        Projects</label></button>
+                </div>
+                <div class="socialBar">
+                    <div class="nbSep"></div>
+                    <a href="https://www.deviantart.com/zachjmurphy"><i class="fa fa-deviantart" id="sb4"></i></a>
+                    <a href="https://www.twitch.tv/zachjmurphy"><i class="fa fa-twitch" id="sb8"></i></a>
+                    <a href="https://www.twitter.com/zachjmurphy"><i class="fa fa-twitter" id="sb3"></i></a>
+                </div>
+                <div class="socialIndic"></div>
+            </div>
         </div>
+        <script>
+            function createRipple(event) {
+                const button = event.currentTarget;
 
-        <div class="nav navBar">
-            <button class="navButton nbAbout" id="nbAbout" data-tooltip="About Me" onclick="aboutBtn()"></button>
-            <button class="navButton nbHome" id="nbHome" data-tooltip="Home" onclick="homeBtn()"></button>
-            <button class="navButton nbProjects" id="nbProjects" data-tooltip="My Projects" onclick="projectsBtn()"></button>
-        </div>
-    </div>
-    <script>
-        function aboutBtn() {
-            document.title = "Zach J Murphy - About Me";
-            document.getElementById("greetingLinks").style.opacity = "0";
-            document.getElementById("psWrapper").style.opacity = "0";
-            document.getElementById("aboutBox").style.opacity = "1";
-            document.getElementById("nbAbout").innerHTML = "";
-            document.getElementById("nbHome").innerHTML = "";
-            document.getElementById("nbProjects").innerHTML = "";
-            document.getElementById("nbAbout").style.font = "25px FLNTFILL";
-            document.getElementById("nbHome").style.font = "25px FLNTREG";
-            document.getElementById("nbProjects").style.font = "25px FLNTREG";
-            document.getElementById("greetingLinks").style.pointerEvents = "none";
-            document.getElementById("psWrapper").style.pointerEvents = "none";
-            document.getElementById("aboutBox").style.pointerEvents = "auto";
-        }
+                const circle = document.createElement("span");
+                const diameter = Math.max(button.clientWidth, button.clientHeight);
+                const radius = diameter / 2;
 
-        function homeBtn() {
-            document.title = "Zach J Murphy - Home";
-            document.getElementById("greetingLinks").style.opacity = "1";
-            document.getElementById("psWrapper").style.opacity = "0";
-            document.getElementById("aboutBox").style.opacity = "0";
-            document.getElementById("nbAbout").innerHTML = "";
-            document.getElementById("nbHome").innerHTML = "";
-            document.getElementById("nbProjects").innerHTML = "";
-            document.getElementById("nbAbout").style.font = "25px FLNTREG";
-            document.getElementById("nbHome").style.font = "25px FLNTFILL";
-            document.getElementById("nbProjects").style.font = "25px FLNTREG";
-            document.getElementById("greetingLinks").style.pointerEvents = "auto";
-            document.getElementById("psWrapper").style.pointerEvents = "none";
-            document.getElementById("aboutBox").style.pointerEvents = "none";
-        }
+                circle.style.width = circle.style.height = `${diameter}px`;
+                circle.style.left = `${event.clientX - button.offsetLeft - radius}px`;
+                circle.style.top = `${event.clientY - button.offsetTop - radius}px`;
+                circle.classList.add("ripple");
 
-        function projectsBtn() {
-            document.title = "Zach J Murphy - My Projects";
-            document.getElementById("greetingLinks").style.opacity = "0";
-            document.getElementById("psWrapper").style.opacity = "1";
-            document.getElementById("aboutBox").style.opacity = "0";
-            /**/
-            document.getElementById("nbAbout").innerHTML = "";
-            document.getElementById("nbHome").innerHTML = "";
-            document.getElementById("nbProjects").innerHTML = "";
-            /**/
-            document.getElementById("nbAbout").style.font = "25px FLNTREG";
-            document.getElementById("nbHome").style.font = "25px FLNTREG";
-            document.getElementById("nbProjects").style.font = "25px FLNTFILL";
-            /**/
-            document.getElementById("greetingLinks").style.pointerEvents = "none";
-            document.getElementById("psWrapper").style.pointerEvents = "auto";
-            document.getElementById("aboutBox").style.pointerEvents = "none";
-            /**/
-        }
-    </script>
+                button.appendChild(circle);
+            }
+
+            const buttons = document.getElementsByClassName("button");
+            for (const button of buttons) {
+                button.addEventListener("click", createRipple);
+            }
+        </script>
+
+        <script>
+            function createNewRipple(event) {
+                const button2 = event.currentTarget;
+
+                const circle2 = document.createElement("span");
+                const diameter2 = Math.max(button2.clientWidth, button2.clientHeight);
+                const radius2 = diameter2 / 2;
+
+                circle2.style.width = circle2.style.height = `${diameter2}px`;
+                circle2.style.left = `${event.clientX - button2.offsetLeft - radius2}px`;
+                circle2.style.top = `${event.clientY - button2.offsetTop - radius2}px`;
+                circle2.classList.add("newRipple");
+
+                button2.appendChild(circle2);
+            }
+
+            const buttons2 = document.getElementsByClassName("glWrapper");
+            for (const button2 of buttons2) {
+                button2.addEventListener("click", createNewRipple);
+            }
+        </script>
 
 </body>
 
