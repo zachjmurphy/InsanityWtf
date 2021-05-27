@@ -6,7 +6,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: url("../assets/alight.png") center/cover no-repeat white;
+    background: var(--back);
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
     pointer-events: none;
@@ -16,7 +16,7 @@
     width: 450px;
     height: 28vh;
     margin: 15px 15px;
-    background: var(--hero) center/cover no-repeat white;
+    background: url("../assets/alight.png") center/cover no-repeat white;
     border-radius: var(--inner-radi);
     box-shadow: 0px 10px 30px -10px rgba(0, 0, 0, 0.3);
 }
