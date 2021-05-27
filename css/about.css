@@ -6,7 +6,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: var(--back);
+    background: url("../assets/alight.png") center/cover no-repeat white;
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
     pointer-events: none;
